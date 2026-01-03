@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jastip Uyon ✨ Titip Beli Amanah & Terpercaya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- KONFIGURASI TAMPILAN (CSS) --- */
+        :root {
+            --primary: #FF8E8E; /* Warna Pink Salmon yang imut */
+            --primary-dark: #E67373; /* Versi sedikit lebih gelap untuk hover */
+            --secondary: #FFF1E6; /* Warna Cream background */
+            --text-dark: #4A4A4A; /* Warna teks abu tua profesional */
+            --text-light: #888888;
+            --shadow-soft: 0 10px 30px rgba(255, 142, 142, 0.15); /* Bayangan lembut */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif; /* Menggunakan font modern */
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* Navbar Sederhana */
+        nav {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid rgba(255, 142, 142, 0.1);
+        }
+        nav h1 { 
+            margin: 0; 
+            color: var(--primary); 
+            font-weight: 700; 
+            font-size: 1.6rem;
+            letter-spacing: -0.5px;
+        }
+
+        /* Container Umum */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 3rem 1.5rem;
+        }
+
+        /* Hero Section (Bagian Atas) */
+        header.hero {
+            text-align: center;
+            /* Background gradient yang manis */
+            background: linear-gradient(135deg, #FFF1E6 0%, #FFDEE9 100%);
+            padding: 5rem 1.5rem;
+            /* Membuat sudut bawah sedikit melengkung */
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+        header.hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 800;
+        }
+        header.hero p.subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        /* Desain Tombol yang Imut & Profesional */
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 14px 40px;
+            border-radius: 50px; /* Bentuk pil */
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+        .btn:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-3px); /* Efek naik sedikit saat di-hover */
+            box-shadow: 0 15px 35px rgba(255, 142, 142, 0.3);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            margin-left: 10px;
+        }
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Bagian Judul Section */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+        /* Garis kecil di bawah judul */
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Grid untuk Kartu */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        /* Desain Kartu (Cara Order) */
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 25px; /* Sudut yang sangat tumpul */
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03); /* Bayangan sangat halus */
+            transition: 0.3s;
+            border: 1px solid #f0f0f0;
+        }
+        .card:hover {
+            box-shadow: var(--shadow-soft);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        .card h3 { 
+            color: var(--text-dark); 
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background: white;
+            color: var(--text-light);
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+        }
+        footer strong { color: var(--primary); }
+
+        /* Responsif untuk HP */
+        @media (max-width: 600px) {
+            header.hero h2 { font-size: 2rem; }
+            .btn { width: 80%; text-align: center; margin-bottom: 10px; margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>🛍️ Jastip Uyon</h1>
+        <a href="https://wa.me/62895353859200" class="btn btn-outline" style="padding: 8px 25px; font-size: 0.9rem;">Chat Admin</a>
+    </nav>
+
+    <header class="hero">
+        <h2>Belanja Apapun Jadi Mudah ✨</h2>
+        <p class="subtitle">Layanan jasa titip beli profesional dengan sentuhan personal. Kamu tinggal duduk manis, biar Uyon yang urus!</p>
+        
+        <a href="https://wa.me/62895353859200?text=Halo%20Jastip%20Uyon,%20saya%20mau%20titip%20barang...%20%F0%9F%9B%8D%EF%B8%8F" class="btn">🎀 Titip Sekarang via WA</a>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Cara Order Super Simpel</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="card-icon">📸</span>
+                <h3>1. Kirim Foto/Link</h3>
+                <p>Ada barang incaran di mall atau toko online? Kirim foto atau link produknya ke WhatsApp kami.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">💸</span>
+                <h3>2. Deal & Bayar</h3>
+                <p>Kami hitungkan total (harga barang + fee jastip terjangkau + ongkir). Lakukan pembayaran.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🎁</span>
+                <h3>3. Barang Sampai</h3>
+                <p>Kami belikan barangnya dengan teliti, packing aman, dan kirim langsung ke alamatmu!</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Dibuat dengan penuh cinta oleh <strong>Jastip Uyon</strong>.<br>
+        Partner belanja terpercaya Anda sejak 2024.</p>
+    </footer>
+
+</body>
+</html>
