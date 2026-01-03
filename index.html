@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jastip Uyon ✨ Jasa Titip Akun Terpercaya</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        /* --- KONFIGURASI WARNA (TEMA BIRU) --- */
+        /* --- KONFIGURASI WARNA --- */
         :root {
             --primary: #4A90E2;
             --primary-dark: #357ABD;
@@ -14,29 +18,20 @@
             --text-dark: #2C3E50;
             --text-light: #607D8B;
             --shadow-soft: 0 10px 30px rgba(74, 144, 226, 0.15);
-            --accent-insta: #E1306C;
+            /* Warna Brand Asli */
+            --wa-color: #25D366;
+            --ig-color: #E1306C;
         }
 
-        /* --- DEFINISI ANIMASI BARU --- */
-        /* Membuat elemen muncul dari bawah ke atas */
+        /* --- ANIMASI --- */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px); /* Mulai dari posisi lebih rendah */
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0); /* Berakhir di posisi normal */
-            }
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        /* Kelas untuk menerapkan animasi */
         .animate-fade-up {
-            opacity: 0; /* Sembunyikan di awal */
-            animation: fadeInUp 0.8s ease-out forwards; /* Jalankan animasi selama 0.8 detik */
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
         }
-
-        /* Penundaan (Delay) agar animasi muncul berurutan */
         .delay-1 { animation-delay: 0.2s; }
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
@@ -51,7 +46,7 @@
             background-color: var(--secondary);
             color: var(--text-dark);
             line-height: 1.7;
-            overflow-x: hidden; /* Mencegah scroll samping saat animasi berjalan */
+            overflow-x: hidden;
         }
 
         /* Navbar */
@@ -62,7 +57,6 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 3px solid rgba(74, 144, 226, 0.1);
-            /* Menambahkan animasi pada navbar */
             animation: fadeInUp 0.8s ease-out forwards;
         }
         nav h1 { 
@@ -70,11 +64,14 @@
             color: var(--primary); 
             font-weight: 800; 
             font-size: 1.5rem;
-            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
+        
         .nav-buttons { display: flex; gap: 10px; }
 
-        /* Container Umum */
+        /* Container */
         .container {
             max-width: 1100px;
             margin: auto;
@@ -102,17 +99,18 @@
             margin: 0 auto 2.5rem auto;
         }
 
-        /* Desain Tombol */
+        /* Tombol & Ikon */
         .btn {
-            display: inline-block;
+            display: inline-flex; /* Agar ikon dan teks sejajar rapi */
+            align-items: center;
+            gap: 10px;
             background: var(--primary);
             color: white;
-            padding: 12px 35px;
+            padding: 12px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             box-shadow: var(--shadow-soft);
-            /* Transisi diperhalus */
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 2px solid var(--primary);
             font-size: 0.95rem;
@@ -120,7 +118,7 @@
         .btn:hover {
             background: var(--primary-dark);
             border-color: var(--primary-dark);
-            transform: translateY(-5px); /* Naik sedikit lebih tinggi */
+            transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(74, 144, 226, 0.3);
         }
         .btn-outline {
@@ -133,37 +131,16 @@
             color: white;
             box-shadow: var(--shadow-soft);
         }
-        .btn-insta {
-            border-color: var(--accent-insta);
-            color: var(--accent-insta);
-        }
-        .btn-insta:hover {
-            background: var(--accent-insta);
-            border-color: var(--accent-insta);
-            color: white;
-             box-shadow: 0 10px 20px rgba(225, 48, 108, 0.2);
-        }
+        
+        /* Tombol Khusus Instagram */
+        .btn-insta { border-color: var(--ig-color); color: var(--ig-color); }
+        .btn-insta:hover { background: var(--ig-color); border-color: var(--ig-color); color: white; box-shadow: 0 10px 20px rgba(225, 48, 108, 0.2); }
+        
+        /* Tombol Khusus WA */
+        .btn-wa-hero { background: var(--wa-color); border-color: var(--wa-color); }
+        .btn-wa-hero:hover { background: #128C7E; border-color: #128C7E; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3); }
 
-        /* Judul Section */
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            color: var(--text-dark);
-            position: relative;
-            font-weight: 700;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--primary);
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
-
-        /* Grid Cards */
+        /* Cards */
         .grid-order {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -176,77 +153,72 @@
             border-radius: 20px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-            /* Transisi diperhalus */
             transition: all 0.4s ease;
             border: 1px solid #EDF2F7;
         }
         .card:hover {
             box-shadow: var(--shadow-soft);
             border-color: var(--primary);
-            transform: translateY(-8px); /* Naik lebih tinggi saat hover */
+            transform: translateY(-8px);
         }
-        .card-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+        /* Ikon Besar di Kartu */
+        .card-icon { 
+            font-size: 2.5rem; 
+            margin-bottom: 1rem; 
+            display: block; 
+            color: var(--primary);
+        }
         .card h3 { color: var(--text-dark); margin-bottom: 0.5rem; font-weight: 700; }
         .card p { color: var(--text-light); font-size: 0.9rem; }
 
-        /* Style Panduan */
-        .guide-container {
-            background: white;
-            padding: 3rem;
-            border-radius: 25px;
-            box-shadow: var(--shadow-soft);
-        }
+        /* Panduan & List */
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 3rem; color: var(--text-dark); position: relative; font-weight: 700; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--primary); margin: 15px auto 0; border-radius: 2px; }
+
+        .guide-container { background: white; padding: 3rem; border-radius: 25px; box-shadow: var(--shadow-soft); }
         .guide-item { margin-bottom: 2.5rem; }
-        .guide-item h3 {
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+        .guide-item h3 { color: var(--primary); font-weight: 700; font-size: 1.3rem; margin-bottom: 1rem; }
+        
+        .guide-list { padding-left: 0; list-style-type: none; }
+        .guide-list li { 
+            margin-bottom: 1rem; 
+            padding-left: 2rem;
+            position: relative; 
         }
-        .guide-list { padding-left: 1.5rem; list-style-type: none; }
-        .guide-list li { margin-bottom: 1rem; position: relative; }
+        /* Mengganti bullet point dengan Checkmark Biru */
         .guide-list li::before {
-            content: '🔹';
+            content: '\f00c'; /* Kode ikon check FontAwesome */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
             position: absolute;
-            left: -1.5rem;
+            left: 0;
             top: 2px;
-            font-size: 0.8rem;
+            color: var(--primary);
+            font-size: 1rem;
         }
         .guide-list strong { color: var(--primary-dark); }
         
         .tips-box {
-            background: var(--secondary);
+            background: #FFF9C4; /* Warna kuning muda */
             padding: 1.5rem 2rem;
             border-radius: 15px;
-            border-left: 5px solid var(--primary);
+            border-left: 5px solid #FBC02D;
             font-weight: 500;
-            color: var(--primary-dark);
+            color: #8D6E03;
             margin-top: 2rem;
-            /* Animasi berdenyut halus */
             animation: pulse 3s infinite ease-in-out;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(74, 144, 226, 0.1); }
-            70% { box-shadow: 0 0 0 15px rgba(74, 144, 226, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(74, 144, 226, 0); }
-        }
+        .tips-box i { font-size: 1.5rem; color: #FBC02D; }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 3rem;
-            background: white;
-            color: var(--text-light);
-            margin-top: 4rem;
-            font-size: 0.9rem;
-            border-top: 1px solid #EDF2F7;
-        }
-        footer strong { color: var(--primary); }
+        footer { text-align: center; padding: 3rem; background: white; color: var(--text-light); margin-top: 4rem; font-size: 0.9rem; border-top: 1px solid #EDF2F7; }
 
         @media (max-width: 768px) {
             nav { flex-direction: column; gap: 1rem; padding: 1rem; }
             .nav-buttons { width: 100%; justify-content: center; flex-wrap: wrap; }
-            .btn-outline { flex-grow: 1; text-align: center; }
+            .btn-outline { flex-grow: 1; text-align: center; justify-content: center; }
             header.hero h2 { font-size: 2rem; }
             .guide-container { padding: 1.5rem; }
         }
@@ -255,10 +227,14 @@
 <body>
 
     <nav>
-        <h1>🛡️ Jastip Uyon</h1>
+        <h1><i class="fa-solid fa-shield-halved"></i> Jastip Uyon</h1>
         <div class="nav-buttons">
-            <a href="https://www.instagram.com/jastip.uyon" target="_blank" class="btn btn-outline btn-insta">📸 Cek Instagram</a>
-            <a href="https://wa.me/62895353859200" class="btn btn-outline">💬 Chat Admin</a>
+            <a href="https://www.instagram.com/jastip.uyon" target="_blank" class="btn btn-outline btn-insta">
+                <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+            <a href="https://wa.me/62895353859200" class="btn btn-outline">
+                <i class="fa-brands fa-whatsapp"></i> Chat Admin
+            </a>
         </div>
     </nav>
 
@@ -266,24 +242,26 @@
         <h2 class="animate-fade-up">Solusi Aman Transaksi Digital ✨</h2>
         <p class="subtitle animate-fade-up delay-1">Jasa perantara (Rekber/Jastip Akun) terpercaya. Kami menjamin keamanan transaksi antara penjual dan pembeli hingga tuntas.</p>
         
-        <a href="https://wa.me/62895353859200?text=Halo%20Admin%20Jastip%20Uyon,%20saya%20mau%20konsultasi%20tentang%20jastip%20akun...%20%F0%9F%9B%A1%EF%B8%8F" class="btn animate-fade-up delay-2">🛡️ Amankan Transaksi Sekarang</a>
+        <a href="https://wa.me/62895353859200?text=Halo%20Admin%20Jastip%20Uyon,%20saya%20mau%20konsultasi%20tentang%20jastip%20akun...%20%F0%9F%9B%A1%EF%B8%8F" class="btn btn-wa-hero animate-fade-up delay-2">
+            <i class="fa-brands fa-whatsapp fa-lg"></i> Amankan Transaksi Sekarang
+        </a>
     </header>
 
     <div class="container">
         <h2 class="section-title animate-fade-up delay-3">Proses Transaksi Kilat</h2>
         <div class="grid-order">
             <div class="card animate-fade-up delay-3">
-                <span class="card-icon">📝</span>
+                <i class="fa-solid fa-handshake card-icon"></i>
                 <h3>1. Deal Harga</h3>
                 <p>Penjual & pembeli sepakat dengan harga & ketentuan akun.</p>
             </div>
             <div class="card animate-fade-up delay-4">
-                <span class="card-icon">💸</span>
+                <i class="fa-solid fa-money-bill-wave card-icon"></i>
                 <h3>2. Pembeli Transfer</h3>
                 <p>Dana diamankan di rekening Jastip Uyon terlebih dahulu.</p>
             </div>
             <div class="card animate-fade-up delay-5">
-                <span class="card-icon">🔐</span>
+                <i class="fa-solid fa-user-shield card-icon"></i>
                 <h3>3. Proses Amankan</h3>
                 <p>Data akun dipindahkan. Setelah aman, dana diteruskan ke penjual.</p>
             </div>
@@ -294,44 +272,45 @@
             
             <div class="guide-item">
                 <h3>1. Apa Itu Jastip Akun?</h3>
-                <p>Jastip (Jasa Titip) dalam jual beli akun adalah layanan pihak ketiga (perantara/rekber) yang menjamin keamanan transaksi antara penjual (seller) dan pembeli (buyer). Kami hadir untuk meminimalisir risiko penipuan, mengurus proses pemasaran, hingga memastikan akun berpindah tangan dengan aman.</p>
+                <p>Jastip (Jasa Titip) dalam jual beli akun adalah layanan pihak ketiga (perantara/rekber) yang menjamin keamanan transaksi antara penjual (seller) dan pembeli (buyer).</p>
             </div>
 
             <div class="guide-item">
                 <h3>2. Alur & Sistem Kerja</h3>
                 <p>Kami menerapkan sistem yang transparan agar kedua belah pihak merasa tenang:</p>
                 <ul class="guide-list">
-                    <li><strong>Penitipan Akun:</strong> Seller memberikan detail akun (username, jumlah followers, harga) kepada kami.</li>
-                    <li><strong>Pemasaran:</strong> Kami mengunggah akun tersebut ke katalog store kami agar dilihat calon pembeli.</li>
-                    <li><strong>Pembayaran & Amankan Data:</strong> Pembeli membayar ke akun kami. Setelah dana masuk, kami memberikan akses login ke pembeli.</li>
-                    <li><strong>Proses Rekber:</strong> Seller wajib membantu pembeli mengubah data (email/password) sampai akun 100% aman.</li>
-                    <li><strong>Pencairan Dana:</strong> Setelah 1x24 jam dan akun dikonfirmasi aman, kami akan meneruskan dana ke seller (setelah dipotong biaya jasa).</li>
+                    <li><strong>Penitipan Akun:</strong> Seller memberikan detail akun ke kami.</li>
+                    <li><strong>Pemasaran:</strong> Kami mengunggah akun tersebut ke katalog store kami.</li>
+                    <li><strong>Pembayaran & Amankan:</strong> Pembeli transfer ke Rekber, kami amankan login.</li>
+                    <li><strong>Proses Rekber:</strong> Seller wajib bantu ubah email/password.</li>
+                    <li><strong>Pencairan Dana:</strong> Dana cair ke seller setelah akun 100% aman.</li>
                 </ul>
             </div>
 
             <div class="guide-item">
-                <h3>3. Mengenal Tipe Akun: RP vs RL</h3>
-                <p>Pahami perbedaan jenis akun sebelum membeli:</p>
+                <h3>3. Mengenal Tipe Akun</h3>
                 <ul class="guide-list">
-                    <li><strong>Akun RP (Roleplay):</strong> Akun identitas fiktif/peran. Digunakan untuk memerankan tokoh tertentu (artis, karakter anime/game, atau idol). Fokusnya adalah interaksi antar komunitas roleplayer.</li>
-                    <li><strong>Akun RL (Real Life):</strong> Akun identitas asli. Isinya adalah aktivitas nyata, foto pribadi, dan digunakan untuk keperluan personal atau bisnis di dunia nyata.</li>
+                    <li><strong>Akun RP (Roleplay):</strong> Identitas fiktif untuk peran tokoh/anime.</li>
+                    <li><strong>Akun RL (Real Life):</strong> Identitas asli untuk pribadi/bisnis.</li>
                 </ul>
             </div>
 
             <div class="guide-item">
                 <h3>4. Mengenal Jenis Followers</h3>
-                <p>Kualitas akun sangat ditentukan oleh jenis pengikutnya:</p>
                 <ul class="guide-list">
-                    <li><strong>Mutualan (Real Aktif):</strong> Hasil saling follow. Akun asli dan aktif, interaksinya sangat tinggi dan nyata.</li>
-                    <li><strong>Campuran:</strong> Gabungan akun asli dan akun bot/pasif. Jumlahnya terlihat banyak, namun interaksinya sedang hingga rendah.</li>
-                    <li><strong>Nolog (No Login):</strong> Followers yang ditambah tanpa akses akun. Lebih aman dari sisi privasi, namun pengikutnya tidak aktif dan berisiko berkurang (drop).</li>
-                    <li><strong>Web (Bot/Pasif):</strong> Menggunakan situs otomatis. Harga sangat murah, tapi pengikut biasanya akun kosong dan sangat rawan berkurang drastis dalam waktu singkat.</li>
-                    <li><strong>Giveaway (GA):</strong> Pengikut yang datang karena ingin hadiah. Sangat aktif di awal, namun berpotensi unfollow jika acara giveaway berakhir.</li>
+                    <li><strong>Mutualan (Real):</strong> Interaksi tinggi, hasil saling follow.</li>
+                    <li><strong>Campuran:</strong> Gabungan akun asli dan bot.</li>
+                    <li><strong>Nolog (No Login):</strong> Disuntik tanpa login, rawan drop.</li>
+                    <li><strong>Web (Bot):</strong> Akun kosong, sangat murah tapi cepat hilang.</li>
                 </ul>
             </div>
 
             <div class="tips-box">
-                💡 <strong>Tips Memilih Akun:</strong> "Selalu cek jenis followers dan tipe akun sesuai kebutuhanmu. Jangan ragu bertanya kepada admin sebelum melakukan transaksi!"
+                <i class="fa-solid fa-lightbulb"></i>
+                <div>
+                    <strong>Tips Memilih Akun:</strong><br>
+                    "Selalu cek jenis followers dan tipe akun sesuai kebutuhanmu. Jangan ragu bertanya kepada admin sebelum transaksi!"
+                </div>
             </div>
 
         </div>
